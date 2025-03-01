@@ -52,7 +52,7 @@ section {
 }
 
 .home {
-  background: #ffffff;
+  background: #f4f4f4;
   min-height: 90vh;
   padding: 0 20px;
   display: flex;
@@ -97,11 +97,15 @@ section {
 }
 
 .social-icon {
-  width: 30px;  /* adjust size as needed */
-  height: 30px;
+  width: 50px; /* Increased size */
+  height: 50px;
   cursor: pointer;
-  transition: transform 0.2s;
+  border-radius: 50%; /* Optional: Make circular */
+  padding: 10px; /* Ensures spacing around the icon */
+  padding-bottom: 20px;  
+  background-color: #f4f4f4; /* Optional: To enhance visibility */
 }
+
 
 .social-icon:hover {
   transform: scale(1.1);
@@ -185,7 +189,7 @@ section {
 }
 
 .about {
-  background: #f4f4f4;
+  background: #ffffff;
   color: #333;
   position: relative;
   padding: 4rem 2rem;

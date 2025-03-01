@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./App.css";
 import profilePhoto from './formal_photo.png';
+import office_lady from './office_lady.png';
 import linkedinIcon from './linkdin.jpg';
 import githubIcon from './github.svg';
 import instaIcon from './insta.jpg';
@@ -31,7 +32,7 @@ function App() {
     setStatus({ submitting: true, success: false, error: null });
 
     try {
-        const response = await axios.post('http://localhost:5000/api/contact', formData, {
+        const response = await axios.post('http://localhost:8080/api/contact', formData, {
             headers: {
                 'Content-Type': 'application/json',
             }
@@ -181,8 +182,9 @@ function App() {
             </motion.p>
           </div>
           <div className="about-image-container">
-            {/* Right half space for future content */}
+            <img src={office_lady} alt="office-lady" style={{ width: "600px"}} />
           </div>
+
         </div>
       </motion.section>
 
@@ -204,7 +206,7 @@ function App() {
           >
             <div className="project-icon">🔍</div>
             <h3>Real-Time Shaft Detection System</h3>
-            <span className="project-badge">Sponsored by Anad Groups</span>
+            <span className="project-badge">Sponsored by Anad Group's of Industry</span>
             <p>Real-time monitoring and detection system for shaft manufacturing stages using YOLOv7 algorithm.</p>
             <div className="project-tech-stack">
               <span>YOLOv7</span>
@@ -224,6 +226,8 @@ function App() {
             <h3>Color Blindness Simulator</h3>
             <p>Interactive application that simulates how images appear to individuals with different types of color blindness.</p>
             <div className="project-tech-stack">
+              <span>HTML</span>
+              <span>CSS</span>
               <span>Image Processing</span>
               <span>svg Filters</span>
               <span>servlet</span>
@@ -231,21 +235,26 @@ function App() {
           </motion.div>
 
           <motion.div 
-            className="project-card"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <div className="project-icon">🤖</div>
-            <h3>AI Phone Agent</h3>
-            <p>Automated cold calling system with AI-powered communication for product sales and customer interaction.</p>
-            <div className="project-tech-stack">
-              <span>React</span>
-              <span>Node.js</span>
-              <span>Smallest.ai</span>
-              <span>deepseek</span>
-              <span>Postgres</span>
-            </div>
-          </motion.div>
+    className="project-card"
+    whileHover={{ scale: 1.05 }}
+    transition={{ type: "spring", stiffness: 300 }}
+>
+    <div className="project-icon">🤖</div>
+    <h3>Zerodha Clone</h3>
+    <p>
+        It's an exact copy of the Zerodha website,UI and core functionalities.  
+        The project includes real-time stock data visualization, interactive charts, and user authentication.
+    </p>
+    <div className="project-tech-stack">
+        <span>React</span>
+        <span>Node.js</span>
+        <span>Express.js</span>
+        <span>Chart.js</span>
+        <span>MongoDB Atlas</span>
+        <span>AWS</span>
+    </div>
+</motion.div>
+
         </div>
       </motion.section>
 
@@ -330,7 +339,7 @@ function App() {
             </motion.div>
           )}
         </motion.form>
-
+          
         <button className="contact-btn">Get in Touch</button>
       </motion.section>
     </div>
